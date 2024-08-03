@@ -71,3 +71,47 @@
                         <a class="nav-link" href="#">World</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Health</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="my-4">Today's Headline</h1>
+        <div class="row">
+            {% for news in articles %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="newsbox card">
+                    <img src="{{ news.urlToImage }}" class="card-img-top news-img" alt="News Image">
+                    <div class="card-body news-content">
+                        <h3 class="news-title card-title">{{ news.title }}</h3>
+                        <h6 class="news-author card-subtitle mb-2 text-muted">Author: {{ news.author }}</h6>
+                        <p class="news-description card-text">{{ news.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 The News. All rights reserved.</p>
+        <p>Follow us on:
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
